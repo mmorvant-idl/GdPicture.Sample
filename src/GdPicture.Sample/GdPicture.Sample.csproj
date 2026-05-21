@@ -13,11 +13,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CommandLineParser" Version="2.9.1" />
     <PackageReference Include="GdPicture" Version="14.4.2" />
     <PackageReference Include="GdPicture.runtimes.windows" Version="14.4.2" />
     <PackageReference Include="GdPicture.WinForms" Version="14.4.2" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="OpenMcdf" Version="3.1.4" />
   </ItemGroup>
 
