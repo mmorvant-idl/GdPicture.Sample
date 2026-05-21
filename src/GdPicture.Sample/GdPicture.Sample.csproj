@@ -1,22 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net472-windows</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <OutputType>Exe</OutputType>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Platforms>AnyCPU;x86</Platforms>
+    <Company>InDxLogic, Inc.</Company>
+    <SourceRevisionId>local-$([System.Environment]::MachineName)_built_$([System.DateTime]::Now.ToString("yyyy-MM-dd_HH:mm:ss"))</SourceRevisionId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GdPicture" Version="14.3.21" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Resources\Fax Fonts.pdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\Multipage.tiff">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <PackageReference Include="CommandLineParser" Version="2.9.1" />
+    <PackageReference Include="GdPicture" Version="14.4.2" />
+    <PackageReference Include="GdPicture.runtimes.windows" Version="14.4.2" />
+    <PackageReference Include="GdPicture.WinForms" Version="14.4.2" />
+    <PackageReference Include="InDxLogic.Constants" Version="1.0.1.8995" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="OpenMcdf" Version="3.1.4" />
   </ItemGroup>
 
 </Project>

@@ -1,20 +1,19 @@
+using GdPicture14;
 using System;
-using System.Windows.Forms;
-using GdPicture.Sample;
+using System.Diagnostics;
 
-namespace PDFCutter
+namespace GdPicture.Sample;
+
+internal class Program
 {
-	static class Program
+	private static IntPtr HWND => Process.GetCurrentProcess().MainWindowHandle;
+
+	[STAThread]
+	private static void Main(string[] args)
 	{
-		/// <summary>
-		///  The main entry point for the application.
-		/// </summary>
-		[STAThread]
-		static void Main()
-		{
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Main());
-		}    
+
+		var licenseManager = new LicenseManager();
+		var unlocked = licenseManager.RegisterKEY("KEY");
+		if (unlocked == false) throw new Exception("GdPicture license exception. Please check the key.");
 	}
 }
